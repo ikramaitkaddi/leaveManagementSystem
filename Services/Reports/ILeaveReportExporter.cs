@@ -1,6 +1,6 @@
 ﻿using LeaveManagementSystem.DTOs;
 
-namespace LeaveManagementSystem.Interfaces
+namespace LeaveManagementSystem.Services.Reports
 {
     public interface ILeaveReportExporter
     {

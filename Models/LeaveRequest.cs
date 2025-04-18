@@ -1,7 +1,7 @@
-﻿namespace LeaveManagementSystem.Models
+﻿using LeaveManagementSystem.Enums;
+
+namespace LeaveManagementSystem.Models
 {
-    public enum LeaveType { Annual, Sick, Other }
-    public enum LeaveStatus { Pending, Approved, Rejected }
 
     public class LeaveRequest
     {

@@ -1,6 +1,6 @@
 ﻿using LeaveManagementSystem.Models;
 
-namespace LeaveManagementSystem.Interfaces
+namespace LeaveManagementSystem.Services
 {
     public interface ILeaveRequestService
     {

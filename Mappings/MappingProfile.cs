@@ -4,8 +4,9 @@
     using AutoMapper;
     using LeaveManagementSystem.DTOs;
     using LeaveManagementSystem.Models;
+using LeaveManagementSystem.Enums;
 
-    namespace Infrastructure.Mappings
+namespace Infrastructure.Mappings
     {
         public class MappingProfile : Profile
         {

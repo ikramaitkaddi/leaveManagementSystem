@@ -1,11 +1,12 @@
-﻿using LeaveManagementSystem.Models;
+﻿using LeaveManagementSystem.Enums;
+using LeaveManagementSystem.Models;
 
-namespace LeaveManagementSystem.Interfaces
+namespace LeaveManagementSystem.Repositories
 {
     public interface ILeaveRequestRepository
     {
         Task<IEnumerable<LeaveRequest>> GetAllAsync();
-        Task<LeaveRequest> GetByIdAsync(int id);
+        Task<LeaveRequest?> GetByIdAsync(int id);
         Task UpdateAsync(LeaveRequest request);
         Task DeleteAsync(LeaveRequest request);
         Task SaveChangesAsync();

@@ -163,3 +163,4 @@ C:\Users\Dell\source\repos\LeaveManagementSystem\obj\Debug\net8.0\LeaveManagemen
 C:\Users\Dell\source\repos\LeaveManagementSystem\obj\Debug\net8.0\ref\LeaveManagementSystem.dll
 C:\Users\Dell\source\repos\LeaveManagementSystem\obj\Debug\net8.0\LeaveManagementSystem.sourcelink.json
 C:\Users\Dell\source\repos\LeaveManagementSystem\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Dell\source\repos\LeaveManagementSystem\bin\Debug\net8.0\LeaveManagementSystem.postman_collection.json

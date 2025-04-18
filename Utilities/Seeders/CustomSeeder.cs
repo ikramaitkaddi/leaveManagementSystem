@@ -1,8 +1,9 @@
 ﻿using LeaveManagementSystem.Data;
+using LeaveManagementSystem.Enums;
 using LeaveManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LeaveManagementSystem.Seeders
+namespace LeaveManagementSystem.Utilities.Seeders
 {
     public static class CustomSeeder
     {

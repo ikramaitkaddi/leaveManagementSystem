@@ -1,6 +1,7 @@
-﻿using LeaveManagementSystem.Models;
+﻿
+using LeaveManagementSystem.Models;
 
-namespace LeaveManagementSystem.Services
+namespace LeaveManagementSystem.Services.Validators
 {
     public class SickLeaveValidationStrategy : ILeaveValidationStrategy
     {

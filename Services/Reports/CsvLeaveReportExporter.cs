@@ -1,7 +1,6 @@
-﻿namespace LeaveManagementSystem.Services
+﻿namespace LeaveManagementSystem.Services.Reports
 {
     using LeaveManagementSystem.DTOs;
-    using LeaveManagementSystem.Interfaces;
     using System.Text;
 
     public class CsvLeaveReportExporter : ILeaveReportExporter

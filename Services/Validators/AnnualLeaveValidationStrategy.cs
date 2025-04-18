@@ -1,8 +1,9 @@
 ﻿using LeaveManagementSystem.Data;
+using LeaveManagementSystem.Enums;
 using LeaveManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace LeaveManagementSystem.Services
+namespace LeaveManagementSystem.Services.Validators
 {
     public class AnnualLeaveValidationStrategy : ILeaveValidationStrategy
     {
@@ -28,7 +29,7 @@ namespace LeaveManagementSystem.Services
 
             int requestedDays = (leaveRequest.EndDate - leaveRequest.StartDate).Days + 1;
 
-            return (totalDaysTaken + requestedDays) <= 20;
+            return totalDaysTaken + requestedDays <= 20;
         }
     }
 

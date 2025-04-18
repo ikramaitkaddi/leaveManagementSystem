@@ -1,5 +1,5 @@
 ﻿using LeaveManagementSystem.Data;
-using LeaveManagementSystem.Interfaces;
+using LeaveManagementSystem.Enums;
 using LeaveManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,8 +14,17 @@ namespace LeaveManagementSystem.Repositories
         }
 
         public async Task<IEnumerable<LeaveRequest>> GetAllAsync() => await _context.LeaveRequests.Include(l => l.Employee).ToListAsync();
-        public async Task<LeaveRequest> GetByIdAsync(int id) => await _context.LeaveRequests.Include(l => l.Employee).FirstOrDefaultAsync(l => l.Id == id);
-        public Task UpdateAsync(LeaveRequest request) => Task.FromResult(_context.LeaveRequests.Update(request));
+        public async Task<LeaveRequest?> GetByIdAsync(int id)
+        {
+            return await _context.LeaveRequests.Include(lr => lr.Employee)
+                                               .FirstOrDefaultAsync(lr => lr.Id == id);
+        }
+
+        public async Task UpdateAsync(LeaveRequest request)
+        {
+            _context.LeaveRequests.Update(request);
+            await _context.SaveChangesAsync();
+        }
         public Task DeleteAsync(LeaveRequest request) => Task.FromResult(_context.LeaveRequests.Remove(request));
         public async Task SaveChangesAsync() => await _context.SaveChangesAsync();
 
@@ -59,5 +68,6 @@ namespace LeaveManagementSystem.Repositories
             _context.LeaveRequests.Add(leaveRequest);
             await _context.SaveChangesAsync();
         }
+
     }
 }

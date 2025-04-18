@@ -1,6 +1,4 @@
-﻿using LeaveManagementSystem.Interfaces;
-
-namespace LeaveManagementSystem.Services
+﻿namespace LeaveManagementSystem.Services.Reports
 {
     public static class LeaveReportExporterFactory
     {

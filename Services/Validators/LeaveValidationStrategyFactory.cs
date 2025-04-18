@@ -1,12 +1,10 @@
 ﻿using LeaveManagementSystem.Data;
+using LeaveManagementSystem.Enums;
 using LeaveManagementSystem.Models;
 
-namespace LeaveManagementSystem.Services
+namespace LeaveManagementSystem.Services.Validators
 {
-    public interface ILeaveValidationStrategyFactory
-    {
-        ILeaveValidationStrategy GetStrategy(LeaveType leaveType);
-    }
+ 
 
     public class LeaveValidationStrategyFactory : ILeaveValidationStrategyFactory
     {

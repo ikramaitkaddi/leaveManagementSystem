@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using LeaveManagementSystem.DTOs;
-using LeaveManagementSystem.Interfaces;
 using LeaveManagementSystem.Models;
 using LeaveManagementSystem.Repositories;
 using Microsoft.EntityFrameworkCore;
 using LeaveManagementSystem.Services;
 using Microsoft.AspNetCore.Mvc;
+using LeaveManagementSystem.Enums;
 
 namespace LeaveManagementSystem.Controllers
 {
@@ -79,6 +79,35 @@ namespace LeaveManagementSystem.Controllers
 
                 await _leaveRequestRepository.AddAsync(leaveRequest);
                 return CreatedAtAction(nameof(GetLeaveRequests), new { id = leaveRequest.Id }, leaveRequest);
+            }
+
+            [HttpPut("{id}")]
+            public async Task<IActionResult> UpdateLeaveRequest(int id, [FromBody] LeaveRequest updatedRequest)
+            {
+                if (id != updatedRequest.Id)
+                    return BadRequest("ID mismatch.");
+
+                var existingRequest = await _leaveRequestRepository.GetByIdAsync(id);
+                if (existingRequest == null)
+                    return NotFound();
+
+                // Apply business rule validation
+                bool isValid = await _leaveRequestService.IsLeaveValid(updatedRequest);
+                if (!isValid)
+                    return BadRequest("Leave request is not valid according to the business rules.");
+
+                // Update fields
+                existingRequest.EmployeeId = updatedRequest.EmployeeId;
+                existingRequest.LeaveType = updatedRequest.LeaveType;
+                existingRequest.StartDate = updatedRequest.StartDate;
+                existingRequest.EndDate = updatedRequest.EndDate;
+                existingRequest.Status = updatedRequest.Status;
+                existingRequest.Reason = updatedRequest.Reason;
+                existingRequest.CreatedAt = updatedRequest.CreatedAt;
+
+                await _leaveRequestRepository.UpdateAsync(existingRequest);
+
+                return Ok(existingRequest);
             }
 
             [HttpGet("report")]
