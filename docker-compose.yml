@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./leave.db:/app/leave.db
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+      ASPNETCORE_HTTPS_PORT: "" # Disables HTTPS redirection

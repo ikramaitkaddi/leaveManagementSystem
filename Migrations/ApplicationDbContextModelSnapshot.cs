@@ -41,17 +41,17 @@ namespace LeaveManagementSystem.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            Department = "IT",
-                            FullName = "Ikram Ait Kaddi",
-                            JoiningDate = new DateTime(2021, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = 3,
+                            Department = "HR",
+                            FullName = "Alice Johnson",
+                            JoiningDate = new DateTime(2022, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
-                            Id = 2,
-                            Department = "RH",
-                            FullName = "John Doe",
-                            JoiningDate = new DateTime(2021, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Id = 4,
+                            Department = "IT",
+                            FullName = "Bob Smith",
+                            JoiningDate = new DateTime(2021, 11, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -92,14 +92,25 @@ namespace LeaveManagementSystem.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EmployeeId = 1,
-                            EndDate = new DateTime(2025, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Id = 3,
+                            CreatedAt = new DateTime(2024, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 2,
+                            EndDate = new DateTime(2024, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LeaveType = 0,
                             Reason = "Vacation",
-                            StartDate = new DateTime(2025, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2024, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = 0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2024, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EmployeeId = 2,
+                            EndDate = new DateTime(2024, 7, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            LeaveType = 1,
+                            Reason = "Flu",
+                            StartDate = new DateTime(2024, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = 1
                         });
                 });
 

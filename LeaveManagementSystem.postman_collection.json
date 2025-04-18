@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "65da02d2-9dff-4383-8972-bfcd6e29f987",
+		"name": "LeaveManagementSystem",
+		"description": "API collection for managing leave requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "42688771",
+		"_collection_link": "https://universal-eclipse-462797.postman.co/workspace/My-Workspace~c36cd9ce-ae13-47f7-82fc-61b2d372593e/collection/42688771-65da02d2-9dff-4383-8972-bfcd6e29f987?action=share&source=collection_link&creator=42688771"
+	},
+	"item": [
+		{
+			"name": "Get All Leave Requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/LeaveRequests"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Leave Requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/LeaveRequests/filter?employeeId=1&status=Pending&startDate=2025-04-01&endDate=2025-04-30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"LeaveRequests",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "employeeId",
+							"value": "1"
+						},
+						{
+							"key": "status",
+							"value": "Pending"
+						},
+						{
+							"key": "startDate",
+							"value": "2025-04-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2025-04-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Leave Request by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/LeaveRequests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Leave Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"employeeId\": 1,\n  \"startDate\": \"2025-04-20\",\n  \"endDate\": \"2025-04-22\",\n  \"reason\": \"Annual vacation\"\n}"
+				},
+				"url": "http://localhost:8080/api/LeaveRequests"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Leave Request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 1,\n  \"employeeId\": 1,\n  \"startDate\": \"2025-04-21\",\n  \"endDate\": \"2025-04-23\",\n  \"reason\": \"Updated reason\",\n  \"status\": \"Pending\"\n}"
+				},
+				"url": "http://localhost:8080/api/LeaveRequests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Leave Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/LeaveRequests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Leave Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/api/LeaveRequests/1/approve"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Leave Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/LeaveRequests/report?year=2025",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"LeaveRequests",
+						"report"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2025"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

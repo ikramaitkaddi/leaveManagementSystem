@@ -6,9 +6,11 @@ namespace LeaveManagementSystem.Interfaces
     {
         Task<IEnumerable<LeaveRequest>> GetAllAsync();
         Task<LeaveRequest> GetByIdAsync(int id);
-        Task AddAsync(LeaveRequest request);
         Task UpdateAsync(LeaveRequest request);
         Task DeleteAsync(LeaveRequest request);
         Task SaveChangesAsync();
+        Task<IEnumerable<LeaveRequest>> FilterLeaveRequests(int? employeeId, LeaveType? leaveType, LeaveStatus? status,
+        DateTime? startDate, DateTime? endDate, string keyword, int page, int pageSize, string sortBy, string sortOrder);
+        Task AddAsync(LeaveRequest leaveRequest);
     }
 }
